@@ -1,0 +1,81 @@
+{
+  "app": "YOUR_APP_NAME",
+  "cred": {
+    "appid": "YOUR_APP_ID",
+    "apikey": "YOUR_API_KEY"
+  },
+  "oldentries": 86400000,
+  "index": {
+    "name": "YOUR_INDEX_NAME",
+    "settings": {
+      "attributesToIndex": [
+        "title, category"
+      ],
+      "attributesForFaceting": [
+        "category"
+      ],
+      "attributesToRetrieve": [
+        "image",
+        "url",
+        "title",
+        "prettydate"
+      ],
+      "optionalWords": [
+        "a",
+        "all",
+        "also",
+        "an",
+        "and",
+        "any",
+        "at",
+        "he",
+        "if",
+        "in",
+        "into",
+        "is",
+        "its",
+        "of",
+        "other",
+        "she",
+        "that",
+        "the",
+        "them",
+        "they",
+        "this",
+        "to",
+        "too",
+        "when",
+        "you",
+        "yours"
+      ]
+    }
+  },
+  "sitemaps": [
+    {
+      "url": "https://YOUR_DOMAIN/sitemap-posts.xml"
+    },
+    {
+      "url": "https://YOUR_DOMAIN/sitemap-pages.xml"
+    }
+  ],
+  "http": {
+    "auth": ""
+  },
+  "selectors": {
+    "category": "meta[property=\"article:tag\"]",
+    "createdAt": "meta[property=\"article:published_time\"]",
+    "description": "meta[property=\"og:description\"]",
+    "image": "meta[property=\"og:image\"]",
+    "prettydate": "time[datetime]",
+    "title": "title",
+    "updatedAt": "meta[property=\"article:modified_time\"]"
+  },
+  "formatters": {
+    "title": "-"
+  },
+  "defaults": {
+    "image": "https://YOUR_DOMAIN/assets/img/android-chrome-192x192.png",
+    "category": "uncategorized"
+  },
+  "blacklist": []
+}

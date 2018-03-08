@@ -1,0 +1,27 @@
+{{!< default}}
+
+<style>
+  main,
+  main>.content,
+  #posts-list {
+    padding: 0;
+    margin: 0;
+  }
+</style>
+
+<h1 id="posts-headline">Writings.</h1>
+
+<ol id="posts-list">
+  {{#foreach posts}}
+    <li class="post-item">
+      <a class="post-link" style="background-image:url('{{img_url feature_image}}');" href="{{url}}" title="Read more about '{{title}}'">
+        <div class="dimmer-mark"></div>
+        <h1 class="post-title">{{title}}</h1>
+        <time class="post-time" datetime="{{date format="DD MMM YYYY"}}">{{date format="DD MMM YYYY"}}</time>
+      </a>
+      <div class="post-tags">{{tags separator=" "}}</div>
+    </li>
+  {{/foreach}}
+</ol>
+
+{{pagination}}

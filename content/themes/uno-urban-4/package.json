@@ -1,0 +1,67 @@
+{
+  "name": "uno-urban",
+  "description": "Simple and Elegant theme for personal branding under Ghost",
+  "homepage": "https://github.com/kikobeats/uno-urban",
+  "version": "4.0.1",
+  "author": {
+    "email": "josefrancisco.verdu@gmail.com",
+    "name": "Kiko Beats",
+    "url": "https://github.com/kikobeats"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kikobeats/uno-urban.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Kikobeats/uno-urban/issues"
+  },
+  "keywords": [
+    "elegant",
+    "ghost",
+    "minimalism",
+    "theme",
+    "uno",
+    "zen"
+  ],
+  "devDependencies": {
+    "algolia-webcrawler": "latest",
+    "browser-sync": "latest",
+    "coffee-script": "latest",
+    "docpress": "latest",
+    "fastclick": "latest",
+    "gulp": "latest",
+    "gulp-add-src": "latest",
+    "gulp-autoprefixer": "latest",
+    "gulp-changed": "latest",
+    "gulp-coffee": "latest",
+    "gulp-concat": "latest",
+    "gulp-cssnano": "latest",
+    "gulp-gh-pages": "latest",
+    "gulp-header": "latest",
+    "gulp-if": "latest",
+    "gulp-sass": "latest",
+    "gulp-strip-css-comments": "latest",
+    "gulp-uglify": "latest",
+    "gulp-util": "latest",
+    "pace-progress": "latest"
+  },
+  "engines": {
+    "node": "^6.9.0"
+  },
+  "scripts": {
+    "dev": "gulp"
+  },
+  "private": true,
+  "license": "MIT",
+  "browserSync": {
+    "files": [
+      "**/*.html",
+      "assets/**/*.*"
+    ],
+    "port": 3000,
+    "proxy": "http://127.0.0.1:2368"
+  },
+  "config": {
+    "posts_per_page": 10
+  }
+}

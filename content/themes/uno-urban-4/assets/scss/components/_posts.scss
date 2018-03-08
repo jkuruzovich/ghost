@@ -1,0 +1,66 @@
+#algolia {
+  display: none;
+  text-align: center;
+  > * {
+    display: inline-block;
+  }
+
+  > p {
+    margin-top: 1.35rem;
+    margin-bottom: 1.8rem;
+  }
+
+  > a > img {
+    height: 25px;
+    vertical-align: middle;
+    margin-left: .25rem;
+  }
+}
+
+#posts-headline {
+  text-align: center;
+  color: $black;
+}
+
+#posts-list {
+  list-style-type: none;
+  text-align: center;
+}
+
+.post-item {
+  margin: 0;
+
+  .post-tags {
+    position: absolute;
+    margin-top: -78px;
+    width: 100%;
+  }
+}
+
+.post-link {
+  display: block;
+  height: 13.75rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .post-title {
+    width: 80%;
+    color: $gray-lightest;
+    transform: translateY(-50%) translateX(-50%);
+    position: absolute;
+    top: 24%;
+    left: 50%;
+    font-weight: bold;
+    @extend %font-shadow;
+  }
+
+  .post-time {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    color: $gray-light;
+    margin-top: 2rem;
+    @extend %font-shadow;
+  }
+}

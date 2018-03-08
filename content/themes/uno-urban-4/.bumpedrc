@@ -1,0 +1,31 @@
+files: [
+  'package.json'
+]
+
+plugins:
+
+  prerelease:
+
+    'Linting config files':
+      plugin: 'bumped-finepack'
+
+  postrelease:
+
+    'Generating CHANGELOG file':
+      plugin: 'bumped-changelog'
+
+    'Generating build':
+      plugin: 'bumped-terminal'
+      command: 'NODE_ENV=production gulp build-code && gulp build-docs'
+
+    'Commiting new version':
+      plugin: 'bumped-terminal'
+      command: 'git add assets/js/src/__init.coffee CHANGELOG.md package.json assets/css/uno-urban.css assets/js/uno-urban.*.js && git commit -m "$newVersion releases" && git push origin'
+
+    'Publishing tag at GitLab':
+      plugin: 'bumped-terminal'
+      command: 'git tag $newVersion && git push origin $newVersion'
+
+    'Creating ZIP version':
+      plugin: 'bumped-terminal'
+      command: 'git archive -o builds/uno-urban-$newVersion.zip $newVersion'

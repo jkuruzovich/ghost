@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>{{meta_title}}</title>
+  {{> meta}}
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,600italic,600,300">
+  <link rel="stylesheet" type="text/css" href="{{asset "css/uno-urban.css"}}" /> {{ghost_head}}
+</head>
+
+<body class="{{body_class}}">
+  <header id="menu-button" class="expanded">
+    <a><i class="icon icon-list"></i></a>
+  </header>
+  {{> aside}}
+  <main data-no-instant>
+    <section class="content">
+      {{{body}}} {{> footer}}
+    </section>
+  </main>
+
+  {{ghost_foot}}
+  <script src="{{asset "js/uno-urban.common.js"}}" type="text/javascript" charset="utf-8"></script>
+
+  {{#is "post, page"}}
+    <script src="{{asset "js/uno-urban.post.js"}}" type="text/javascript" charset="utf-8"></script>
+  {{/is}}
+
+  {{#is "home, tag"}}
+    <script>
+      Uno.animate('#posts-list time')
+      Uno.infiniteScroll({
+        currentPage: parseInt('{{pagination.page}}'),
+        maxPage: parseInt('{{pagination.pages}}'),
+        context: $('#posts-list'),
+        childrenSelector: '.post-item'
+      })
+    </script>
+  {{/is}}
+
+  {{#is "home, tag"}}
+    <script src="//cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+    <script>
+      var algoliaClient = algoliasearch(algolia_app_id, algolia_api_key)
+      var algoliaIndex = algoliaClient.initIndex(algolia_index)
+    </script>
+  {{/is}}
+
+  {{> google-analytics}}
+</body>
+
+</html>
